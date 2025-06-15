@@ -15,14 +15,14 @@ function Login() {
         <div>
           <div className="flex items-center mb-4 rounded px-2 py-2 bg-gray-200 space-x-4">
             <Button color="white" text="black">
-              Sign In{" "}
+              Sign In
             </Button>
             <Button color="bg-gray-200">Sign Up</Button>
           </div>
           <div className="w-full max-w-md space-y-4">
             <Input placeholder="Email" />
             <Input placeholder="Password" />
-            <Button>Login</Button>
+            <Button>Sign In</Button>
           </div>
         </div>
       </div>
