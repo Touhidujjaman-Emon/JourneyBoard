@@ -13,10 +13,6 @@ function DynamicGrid() {
         <h2 className="text-lg font-semibold">Card 3</h2>
         <p className="text-gray-600">This is the content of card 3.</p>
       </div>
-      <div className="bg-white shadow-md rounded p-4">
-        <h2 className="text-lg font-semibold">Card 4</h2>
-        <p className="text-gray-600">This is the content of card 4.</p>
-      </div>
     </div>
   );
 }
