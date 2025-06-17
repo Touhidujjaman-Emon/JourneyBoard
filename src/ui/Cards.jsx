@@ -10,7 +10,7 @@ import {
 function Cards({ productData }) {
   const [showCmntModal, setShowCmntModal] = useState(false);
   return (
-    <div className="bg-white shadow-md rounded p-4 max-h-64 h-full flex flex-col  justify-between">
+    <div className="bg-white shadow-md rounded p-4 h-full flex flex-col  justify-between">
       <div>
         <div className="flex  flex-col  justify-start">
           <h2 className="text-2xl font-semibold">{productData.title}</h2>

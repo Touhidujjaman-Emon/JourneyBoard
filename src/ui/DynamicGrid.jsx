@@ -25,6 +25,22 @@ const productData = [
     description: "This is a brief description of Product 3.",
     date: "2023-10-03",
   },
+  {
+    id: "jorneyBoard",
+    title: "Product 3",
+    category: "Category C",
+    status: "Available",
+    description: "This is a brief description of Product 3.",
+    date: "2023-10-03",
+  },
+  {
+    id: "jorneyBoard",
+    title: "Product 3",
+    category: "Category C",
+    status: "Available",
+    description: "This is a brief description of Product 3  .",
+    date: "2023-10-03",
+  },
 ];
 
 function DynamicGrid() {
