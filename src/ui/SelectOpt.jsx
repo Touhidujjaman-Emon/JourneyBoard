@@ -6,7 +6,7 @@ function SelectOpt({ options, onChange, value, label }) {
           {label}
         </span>
       )}
-      <select onChange={onChange} value={value}>
+      <select className="cursor-pointer" onChange={onChange} value={value}>
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}

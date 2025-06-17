@@ -30,7 +30,6 @@ const productOptions = [
 
 function FilteringSorting() {
   const [selectedStatus, setSelectedStatus] = useState("all");
-
   const [selectedCategories, setSelectedCategories] = useState("all");
 
   const [selectedSorting, setSelectedSorting] = useState("all");
