@@ -3,8 +3,8 @@ import Button from "../../ui/Button";
 function SignIn() {
   return (
     <div className="w-full max-w-md space-y-4">
-      <Input placeholder="Email" />
-      <Input placeholder="Password" />
+      <Input placeholder="email" />
+      <Input placeholder="password" />
       <Button>Sign In</Button>
     </div>
   );
