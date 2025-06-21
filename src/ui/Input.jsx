@@ -1,11 +1,11 @@
-function Input({ placeholder }) {
+export default function Input({ value, onChange, placeholder, type = "text" }) {
   return (
     <input
-      type="text"
+      className="border rounded p-2 w-full"
+      type={type}
       placeholder={placeholder}
-      className="border border-gray-400 px-4 py-2 rounded w-full"
+      value={value}
+      onChange={onChange}
     />
   );
 }
-
-export default Input;

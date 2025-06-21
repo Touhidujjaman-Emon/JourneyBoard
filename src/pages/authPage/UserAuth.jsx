@@ -1,10 +1,9 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import SignIn from "./SignIn";
 
 function UserAuth() {
   const location = useLocation();
   return (
-    <form className="flex flex-col items-center justify-center h-screen bg-gray-100 ">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 ">
       <div className="bg-white shadow-md rounded p-8 w-full max-w-lg">
         <div className="mb-6 text-center">
           <h1 className="text-2xl font-bold mb-2 ">Welcome to JourneyBoard</h1>
@@ -39,7 +38,7 @@ function UserAuth() {
           <Outlet />
         </div>
       </div>
-    </form>
+    </div>
   );
 }
 
