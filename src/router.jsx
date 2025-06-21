@@ -4,6 +4,7 @@ import UserAuth from "./pages/authPage/UserAuth";
 import HomePage from "./pages/homePage/HomePage";
 import SignIn from "./pages/authPage/SignIn";
 import SignUp from "./pages/authPage/Signup";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 export const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -16,5 +17,12 @@ export const router = createBrowserRouter([
     ],
   },
 
-  { path: "/homePage", element: <HomePage /> },
+  {
+    path: "/homePage",
+    element: (
+      <ProtectedRoute>
+        <HomePage />
+      </ProtectedRoute>
+    ),
+  },
 ]);

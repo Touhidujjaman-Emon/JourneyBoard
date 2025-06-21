@@ -5,6 +5,7 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [session, setSession] = useState(undefined);
+  console.log(session);
 
   //signUp
   const signUpNewUser = async (username, email, password) => {
