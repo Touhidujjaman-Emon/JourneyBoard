@@ -14,7 +14,7 @@ function NavBar() {
   };
   return (
     <div className="flex items-center justify-between p-4 bg-white text-black shadow-md rounded-t">
-      <span className="text-2xl font-bold">JourneyBoard</span>
+      <span className="text-xl sm:text-2xl font-bold">JourneyBoard</span>
       <div className="flex items-center space-x-4">
         <span className=" text-gray-600">
           {session?.user?.user_metadata.username}
