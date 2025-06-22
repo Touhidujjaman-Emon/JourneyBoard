@@ -1,5 +1,6 @@
 import IconBtn from "./IconBtn";
-import CmntModal from "../pages/cmntPage/cmntModal";
+import CmntModal from "../pages/cmntPage/CmntModal.jsx";
+
 import { useState } from "react";
 import { useUpvotes } from "../services/upVote";
 import { dateFormater } from "../utils/dateFormater";
