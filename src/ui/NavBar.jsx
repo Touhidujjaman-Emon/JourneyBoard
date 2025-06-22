@@ -1,4 +1,3 @@
-import Button from "./Button";
 import { useAuth } from "../features/userAuth/AuthContext";
 import { useNavigate } from "react-router-dom";
 function NavBar() {
@@ -18,7 +17,7 @@ function NavBar() {
       <span className="text-2xl font-bold">JourneyBoard</span>
       <div className="flex items-center space-x-4">
         <span className=" text-gray-600">
-          {session.user.user_metadata.username}
+          {session?.user?.user_metadata.username}
         </span>
         <button
           onClick={handleSignOut}

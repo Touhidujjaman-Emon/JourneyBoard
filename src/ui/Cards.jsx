@@ -67,7 +67,10 @@ function Cards({ productData }) {
       {error && <p className="text-red-500 text-sm mt-2">{error.message}</p>}
 
       {showCmntModal && (
-        <CmntModal display="block" onClick={() => setShowCmntModal(false)} />
+        <CmntModal
+          itemId={productData.id}
+          onClick={() => setShowCmntModal(false)}
+        />
       )}
     </div>
   );
