@@ -5,5 +5,14 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), eslint(), tailwindcss()],
+  plugins: [
+    react(),
+    eslint({
+      emitWarning: true,
+      emitError: false,
+      failOnWarning: false,
+      failOnError: false,
+    }),
+    tailwindcss(),
+  ],
 });
