@@ -2,6 +2,8 @@ import IconBtn from "./IconBtn";
 import CmntModal from "../pages/cmntPage/cmntModal";
 import { useState } from "react";
 import { useUpvotes } from "../services/upVote";
+import { dateFormater } from "../utils/dateFormater";
+
 import {
   CalendarDaysIcon,
   ChatBubbleBottomCenterIcon,
@@ -14,6 +16,7 @@ function Cards({ productData }) {
   const { count, hasUpvoted, loading, error, toggle } = useUpvotes(
     productData.id
   );
+  const formattedDate = dateFormater(productData.created_at);
 
   return (
     <div className="bg-white shadow-md rounded p-4 h-full flex flex-col justify-between">
@@ -35,7 +38,7 @@ function Cards({ productData }) {
       <div className="flex items-center justify-between mt-6 border-t pt-4 border-gray-200">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
           <CalendarDaysIcon className="h-6 w-6 text-blue-500" />
-          <span>{productData.date}</span>
+          <span>{formattedDate}</span>
         </div>
 
         <div className="flex items-center space-x-4">

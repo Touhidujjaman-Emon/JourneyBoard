@@ -7,15 +7,12 @@ function SignIn() {
   const { signInUser, session } = useAuth();
   const navigate = useNavigate();
 
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setError(null);
-    // setLoading(true);
+
     try {
       const { error } = await signInUser(email, password);
       if (error) {

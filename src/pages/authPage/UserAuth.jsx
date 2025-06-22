@@ -37,6 +37,17 @@ function UserAuth() {
           </div>
           <Outlet />
         </div>
+        <div className=" text-sm text-gray-600 mt-4">
+          <span>Sign in with </span>
+          <div className="flex items-center justify-around bg-gray-200 px-2 py-2 rounded mt-4 mb-4">
+            <span>Email: demo@gmail.com </span>
+            <span>Pass: 33201099</span>
+          </div>
+          <span>
+            Or you can create your own account (I have turned off email
+            verification)
+          </span>
+        </div>
       </div>
     </div>
   );

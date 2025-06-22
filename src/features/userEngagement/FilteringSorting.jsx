@@ -29,7 +29,11 @@ const productOptions = [
 
 function FilteringSorting({ filters, setFilters }) {
   return (
-    <div className="flex items-center justify-between mt-8 space-x-4 px-8 py-4 bg-white text-black shadow-md rounded-t">
+    <div
+      className="grid grid-cols-1 gap-4 px-4 py-4 bg-white text-black shadow-md rounded-t
+                    sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+                    md:px-8 md:py-4"
+    >
       <SelectOpt
         label="Product:"
         options={productOptions}

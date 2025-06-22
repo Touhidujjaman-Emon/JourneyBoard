@@ -7,7 +7,7 @@ import SignUp from "./pages/authPage/Signup";
 import ProtectedRoute from "./ui/ProtectedRoute";
 
 export const router = createBrowserRouter([
-  { path: "/", element: <App /> },
+  { path: "/", element: <UserAuth /> },
   {
     path: "/userAuth",
     element: <UserAuth />,

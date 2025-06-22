@@ -3,18 +3,18 @@ import { supabase } from "./supabase";
 export async function fetchComments(itemId) {
   try {
     const { data, error, status, statusText } = await supabase
-      .from("comments")
+      .from("comments_with_profiles")
       .select("*")
       .eq("item_id", itemId)
       .order("created_at", { ascending: true });
 
     if (error) {
-      console.error("❌ fetchComments error:", { status, statusText, error });
+      console.error(" fetchComments error:", { status, statusText, error });
       return { data: null, error };
     }
     return { data, error: null };
   } catch (err) {
-    console.error("💥 fetchComments exception:", err);
+    console.error(" fetchComments exception:", err);
     return { data: null, error: err };
   }
 }
@@ -37,12 +37,12 @@ export async function postComment(itemId, parentId, content) {
     ]);
 
     if (error) {
-      console.error("❌ postComment error:", error);
+      console.error(" postComment error:", error);
       return { data: null, error };
     }
     return { data, error: null };
   } catch (err) {
-    console.error("💥 postComment exception:", err);
+    console.error(" postComment exception:", err);
     return { data: null, error: err };
   }
 }
@@ -55,12 +55,12 @@ export async function updateComment(commentId, newContent) {
       .eq("id", commentId);
 
     if (error) {
-      console.error("❌ updateComment error:", error);
+      console.error(" updateComment error:", error);
       return { data: null, error };
     }
     return { data, error: null };
   } catch (err) {
-    console.error("💥 updateComment exception:", err);
+    console.error(" updateComment exception:", err);
     return { data: null, error: err };
   }
 }
@@ -73,12 +73,26 @@ export async function deleteComment(commentId) {
       .eq("id", commentId);
 
     if (error) {
-      console.error("❌ deleteComment error:", error);
+      console.error(" deleteComment error:", error);
       return { data: null, error };
     }
     return { data, error: null };
   } catch (err) {
-    console.error("💥 deleteComment exception:", err);
+    console.error(" deleteComment exception:", err);
     return { data: null, error: err };
   }
 }
+
+export const getCommentCount = async (itemId) => {
+  const { count, error } = await supabase
+    .from("comments")
+    .select("*", { count: "exact", head: true })
+    .eq("item_id", itemId);
+
+  if (error) {
+    console.error("Error getting comment count:", error.message);
+    return 0;
+  }
+
+  return count;
+};

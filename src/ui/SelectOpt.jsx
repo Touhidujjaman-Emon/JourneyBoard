@@ -2,7 +2,7 @@ function SelectOpt({ options, onChange, value, label }) {
   return (
     <label className="flex  gap-2 items-center">
       {label && (
-        <span className="text-sm font-medium bg-gray-400 text-black px-2 py-1 rounded">
+        <span className="text-sm font-medium bg-gray-200 text-black px-2 py-1 rounded">
           {label}
         </span>
       )}
