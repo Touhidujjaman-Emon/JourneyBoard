@@ -22,7 +22,7 @@ function Cards({ productData }) {
           <h2 className="text-2xl font-semibold">{productData.title}</h2>
           <div className="flex items-center space-x-2 text-xs text-gray-500 mt-2">
             <span className="bg-gray-200 text-black px-2 py-1 rounded">
-              {productData.category}
+              {productData.categories}
             </span>
             <span className="bg-gray-200 text-black px-2 py-1 rounded">
               {productData.status}
