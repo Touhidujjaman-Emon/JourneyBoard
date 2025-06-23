@@ -1,3 +1,6 @@
+<details> <summary><strong>📁 Project Structure</strong></summary>
+
+```
 JourneyBoard/
 ├── .eslintrc.json
 ├── .gitignore
@@ -50,3 +53,7 @@ JourneyBoard/
 │ ├── buildCommentTree.js
 │ ├── dateFormater.js
 │ └── timeFormatter.js
+
+```
+
+</details>
