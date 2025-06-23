@@ -1,4 +1,3 @@
-Project tree:
 JourneyBoard/
 ├── .eslintrc.json
 ├── .gitignore
@@ -6,11 +5,15 @@ JourneyBoard/
 ├── index.html
 ├── package-lock.json
 ├── package.json
+├── vite.config.js
+├── README.md
 ├── public/
 │ └── vite.svg
-├── README.md
 ├── src/
 │ ├── App.jsx
+│ ├── index.css
+│ ├── main.jsx
+│ ├── router.jsx
 │ ├── assets/
 │ │ └── react.svg
 │ ├── features/
@@ -18,8 +21,6 @@ JourneyBoard/
 │ │ │ └── AuthContext.jsx
 │ │ └── userEngagement/
 │ │ └── FilteringSorting.jsx
-│ ├── index.css
-│ ├── main.jsx
 │ ├── pages/
 │ │ ├── authPage/
 │ │ │ ├── SignIn.jsx
@@ -29,7 +30,6 @@ JourneyBoard/
 │ │ │ └── CmntModal.jsx
 │ │ └── homePage/
 │ │ └── HomePage.jsx
-│ ├── router.jsx
 │ ├── services/
 │ │ ├── commentHelper.js
 │ │ ├── getRoadmapItems.jsx
@@ -50,4 +50,3 @@ JourneyBoard/
 │ ├── buildCommentTree.js
 │ ├── dateFormater.js
 │ └── timeFormatter.js
-└── vite.config.js

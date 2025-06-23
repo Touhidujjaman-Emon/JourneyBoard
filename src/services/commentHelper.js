@@ -82,17 +82,3 @@ export async function deleteComment(commentId) {
     return { data: null, error: err };
   }
 }
-
-export const getCommentCount = async (itemId) => {
-  const { count, error } = await supabase
-    .from("comments")
-    .select("*", { count: "exact", head: true })
-    .eq("item_id", itemId);
-
-  if (error) {
-    console.error("Error getting comment count:", error.message);
-    return 0;
-  }
-
-  return count;
-};
