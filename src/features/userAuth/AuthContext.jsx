@@ -39,7 +39,7 @@ export const AuthContextProvider = ({ children }) => {
   // signOut
   const signOutUser = async function () {
     const { error } = await supabase.auth.signOut();
-    return { error }; // Always return an object, even if error is null
+    return { error };
   };
 
   return (
