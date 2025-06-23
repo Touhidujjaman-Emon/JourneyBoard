@@ -57,12 +57,3 @@ export async function fetchItemWithCount(itemId) {
 
   return { data: { ...item, upvote_count: count }, error: null };
 }
-
-export async function fetchUpvoteCount(itemId) {
-  const { count, error } = await supabase
-    .from("upvotes")
-    .select("*", { count: "exact", head: true })
-    .eq("item_id", itemId);
-
-  return { count, error };
-}
