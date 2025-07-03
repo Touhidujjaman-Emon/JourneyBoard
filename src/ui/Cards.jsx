@@ -1,9 +1,7 @@
-import IconBtn from "./IconBtn";
-import CmntModal from "../pages/cmntPage/CmntModal.jsx";
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useUpvotes } from "../services/upVote";
 import { dateFormater } from "../utils/dateFormater";
+import getTotalCommentCount from "../utils/getTotalCommentCount";
 
 import {
   CalendarDaysIcon,
@@ -12,12 +10,36 @@ import {
 import { ArrowUpIcon as ArrowUpOutline } from "@heroicons/react/24/outline";
 import { ArrowUpIcon as ArrowUpSolid } from "@heroicons/react/24/solid";
 
-function Cards({ productData }) {
+import IconBtn from "./IconBtn";
+import CmntModal from "../pages/cmntPage/CmntModal.jsx";
+
+function Cards({ productData, refetchGrid }) {
   const [showCmntModal, setShowCmntModal] = useState(false);
   const { count, hasUpvoted, loading, error, toggle } = useUpvotes(
     productData.id
   );
   const formattedDate = dateFormater(productData.created_at);
+
+  const [commentCount, setCommentCount] = useState(0);
+
+  useEffect(() => {
+    async function fetchAndCount() {
+      const { fetchComments } = await import("../services/commentHelper");
+      const { buildCommentTree } = await import("../utils/buildCommentTree");
+      const { data, error } = await fetchComments(productData.id);
+      if (!error && data) {
+        const tree = buildCommentTree(data);
+        setCommentCount(getTotalCommentCount(tree));
+      }
+    }
+    fetchAndCount();
+  }, [productData.id, showCmntModal]);
+
+  // Wrap toggle to also refetch grid after upvote
+  const handleUpvote = async () => {
+    await toggle();
+    if (typeof refetchGrid === "function") refetchGrid();
+  };
 
   return (
     <div className="bg-white shadow-md rounded p-4 h-full flex flex-col justify-between">
@@ -45,19 +67,33 @@ function Cards({ productData }) {
         <div className="flex items-center space-x-4">
           <IconBtn
             icon={
-              <ChatBubbleBottomCenterIcon className="h-6 w-6 text-blue-500" />
+              <>
+                <ChatBubbleBottomCenterIcon className="h-6 w-6 text-blue-500" />
+                <span className="ml-1 text-gray-600 font-semibold">
+                  {commentCount}
+                </span>
+              </>
             }
             onClick={() => setShowCmntModal(true)}
           />
 
           <IconBtn
-            onClick={toggle}
-            text={count}
+            onClick={handleUpvote}
             icon={
               hasUpvoted ? (
-                <ArrowUpSolid className="h-6 w-6 text-green-500" />
+                <>
+                  <ArrowUpSolid className="h-6 w-6 text-green-500 " />
+                  <span className="ml-1 text-gray-600 font-semibold">
+                    {count}
+                  </span>
+                </>
               ) : (
-                <ArrowUpOutline className="h-6 w-6 text-gray-500" />
+                <>
+                  <ArrowUpOutline className="h-6 w-6 text-gray-500 " />
+                  <span className="ml-1 text-gray-600 font-semibold">
+                    {count}
+                  </span>
+                </>
               )
             }
             disabled={loading}

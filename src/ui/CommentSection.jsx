@@ -9,6 +9,7 @@ import {
 import { buildCommentTree } from "../utils/buildCommentTree";
 import { supabase } from "../services/supabase";
 import Comment from "../features/userEngagement/Comment";
+import getTotalCommentCount from "../utils/getTotalCommentCount";
 
 const toggleEditInTree = (comments, commentId, isEditing = true) => {
   return comments.map((comment) => {
@@ -83,8 +84,14 @@ export default function CommentSection({ itemId }) {
     loadComments();
   };
 
+  // Calculate total comments
+  const totalComments = getTotalCommentCount(tree);
+
   return (
     <div>
+      <div className="mb-2 font-semibold">
+        {totalComments} Comment{totalComments !== 1 ? "s" : ""}
+      </div>
       <form onSubmit={handlePostTopLevel} className="mb-4">
         <textarea
           rows={3}

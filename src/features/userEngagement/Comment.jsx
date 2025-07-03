@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { formatTime } from "../../utils/timeFormatter";
 import FlatComment from "./FlatComment";
-// import getTotalCommentCount from "./commentUtils";
 
 function Comment({
   comment,
@@ -123,7 +122,7 @@ function Comment({
           <textarea
             rows={2}
             maxLength={300}
-            value={replyContent}
+            value={`Replied to ${userName}... replyContent`}
             onChange={(e) => setReplyContent(e.target.value)}
             placeholder={`Replying to ${userName}...`}
             className="w-full border rounded p-2"
@@ -151,7 +150,7 @@ function Comment({
 
       {comment.replies?.length > 0 && (
         <div className="ml-6 mt-3">
-          {depth < 3
+          {depth < 2
             ? comment.replies.map((reply) => (
                 <Comment
                   key={reply.id}
