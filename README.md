@@ -11,49 +11,53 @@ JourneyBoard/
 ├── vite.config.js
 ├── README.md
 ├── public/
-│ └── vite.svg
+│   └── vite.svg
 ├── src/
-│ ├── App.jsx
-│ ├── index.css
-│ ├── main.jsx
-│ ├── router.jsx
-│ ├── assets/
-│ │ └── react.svg
-│ ├── features/
-│ │ ├── userAuth/
-│ │ │ └── AuthContext.jsx
-│ │ └── userEngagement/
-│ │ └── FilteringSorting.jsx
-│ ├── pages/
-│ │ ├── authPage/
-│ │ │ ├── SignIn.jsx
-│ │ │ ├── SignUp.jsx
-│ │ │ └── UserAuth.jsx
-│ │ ├── cmntPage/
-│ │ │ └── CmntModal.jsx
-│ │ └── homePage/
-│ │ └── HomePage.jsx
-│ ├── services/
-│ │ ├── commentHelper.js
-│ │ ├── getRoadmapItems.jsx
-│ │ ├── supabase.js
-│ │ ├── upVote.jsx
-│ │ └── upVoteHelper.js
-│ ├── ui/
-│ │ ├── Button.jsx
-│ │ ├── Cards.jsx
-│ │ ├── CommentSection.jsx
-│ │ ├── DynamicGrid.jsx
-│ │ ├── IconBtn.jsx
-│ │ ├── Input.jsx
-│ │ ├── NavBar.jsx
-│ │ ├── ProtectedRoute.jsx
-│ │ └── SelectOpt.jsx
-│ └── utils/
-│ ├── buildCommentTree.js
-│ ├── dateFormater.js
-│ └── timeFormatter.js
-
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   ├── router.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── features/
+│   │   ├── userAuth/
+│   │   │   └── AuthContext.jsx
+│   │   └── userEngagement/
+│   │       ├── Comment.jsx
+│   │       ├── commentUtils.js
+│   │       ├── FilteringSorting.jsx
+│   │       ├── FlatComment.jsx
+│   │       └── getTotalCount.js
+│   ├── pages/
+│   │   ├── authPage/
+│   │   │   ├── SignIn.jsx
+│   │   │   ├── SignUp.jsx
+│   │   │   └── UserAuth.jsx
+│   │   ├── cmntPage/
+│   │   │   └── CmntModal.jsx
+│   │   └── homePage/
+│   │       └── HomePage.jsx
+│   ├── services/
+│   │   ├── commentHelper.js
+│   │   ├── getRoadmapItems.jsx
+│   │   ├── supabase.js
+│   │   ├── upVote.jsx
+│   │   └── upVoteHelper.js
+│   ├── ui/
+│   │   ├── Button.jsx
+│   │   ├── Cards.jsx
+│   │   ├── CommentSection.jsx
+│   │   ├── DynamicGrid.jsx
+│   │   ├── IconBtn.jsx
+│   │   ├── Input.jsx
+│   │   ├── NavBar.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   └── SelectOpt.jsx
+│   └── utils/
+│       ├── buildCommentTree.js
+│       ├── dateFormater.js
+│       ├── getTotalCommentCount.js
+│       └── timeFormatter.js
 ```
 
 </details>
