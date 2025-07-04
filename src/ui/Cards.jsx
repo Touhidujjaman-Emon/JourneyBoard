@@ -35,7 +35,6 @@ function Cards({ productData, refetchGrid }) {
     fetchAndCount();
   }, [productData.id, showCmntModal]);
 
-  // Wrap toggle to also refetch grid after upvote
   const handleUpvote = async () => {
     await toggle();
     if (typeof refetchGrid === "function") refetchGrid();

@@ -122,7 +122,7 @@ function Comment({
           <textarea
             rows={2}
             maxLength={300}
-            value={`Replied to ${userName}... replyContent`}
+            value={replyContent}
             onChange={(e) => setReplyContent(e.target.value)}
             placeholder={`Replying to ${userName}...`}
             className="w-full border rounded p-2"
