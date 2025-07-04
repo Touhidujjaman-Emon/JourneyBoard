@@ -62,13 +62,15 @@ JourneyBoard/
 
 </details>
 
-## 1. Excuse for Incomplete Implementation
+## 1. Improvements after extended deadline
 
-Although I have implemented the core features (authentication, filtering/sorting, upvotes, and commenting), I could not fulfill some functional requirements like:
+**Depth level 3 nested comments**: Before the extended deadline, I couldn’t implement nested comments with depth level 3 (I did not flatten extra replies and there wasn’t a better UI to display replies, so they didn’t show up). But after getting the extended time, I implemented them. Now JourneyBoard supports nested comments up to depth level 3, with no messy infinite nesting.
 
-**Depth level 3 nested comments**: I did implement nested comments but could not manage the depth. I tried to implement my comment tree in Facebook/Instagram style (depth level 2) with depth level 3, but I encountered a bug where nested comments don’t show up. So I left it as it is with infinite nesting due to time constraints.
+**Pagination**: Now JourneyBoard has a pagination system. It shows 6 cards per page.
 
-**Pagination**: I left it for last but could not complete it due to time constraints.
+**Comments count**: Previously there was no comment count displayed. Now, I have implemented functionality to display the comment count per item.
+
+**Sort by "most upvoted" BUG**:Previously my Supabase database and upvote UI were not synced with each other, which caused the "sort by most upvotes" feature to not work properly. Now, this issue is fixed.
 
 ---
 
